@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Plus Jakarta Sans", Inter, Arial, sans-serif;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+* { box-sizing: border-box; }
+html { background: #ffffff; }
+html.dark { background: #0A0A0A; }
+body { margin: 0; font-family: "Plus Jakarta Sans", Inter, Arial, sans-serif; }
+button, input { font: inherit; }
