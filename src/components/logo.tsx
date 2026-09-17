@@ -1,1 +1,11 @@
-export function Logo() { return <div className="flex items-center gap-2" aria-label="OKOUMÉ Store"><span className="grid size-7 place-items-center rounded-md bg-black text-[10px] font-black tracking-tighter text-white dark:bg-white dark:text-black">O</span><span className="text-sm font-extrabold tracking-[-0.06em] text-black dark:text-white">OKOUMÉ<span className="font-medium">/STORE</span></span></div>; }
+import Image from "next/image";
+import Link from "next/link";
+
+export function Logo() {
+  return (
+    <Link href="/" className="flex h-9 items-center" aria-label="OKOUMÉ Store — Accueil">
+      <Image src="/brand/okoume-logo-black.png" alt="OKOUMÉ" width={154} height={60} priority className="h-8 w-auto object-contain dark:hidden" />
+      <Image src="/brand/okoume-logo-white.png" alt="" width={154} height={60} priority className="hidden h-8 w-auto object-contain dark:block" />
+    </Link>
+  );
+}
