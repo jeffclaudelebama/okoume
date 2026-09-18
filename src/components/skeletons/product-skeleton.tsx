@@ -1,0 +1,3 @@
+export function ProductSkeleton() {
+  return <section className="pt-3"><div className="okoume-skeleton aspect-square rounded-3xl" /><div className="okoume-skeleton mt-6 h-2 w-16 rounded" /><div className="okoume-skeleton mt-3 h-9 w-4/5 rounded" /><div className="okoume-skeleton mt-4 h-4 w-full rounded" /><div className="okoume-skeleton mt-2 h-4 w-3/4 rounded" /><div className="okoume-skeleton mt-6 h-8 w-36 rounded" /><div className="mt-7 space-y-2">{Array.from({ length: 2 }, (_, index) => <div key={index} className="okoume-skeleton h-12 rounded-xl" />)}</div><div className="okoume-skeleton mt-7 h-14 rounded-xl" /></section>;
+}

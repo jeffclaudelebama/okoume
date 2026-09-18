@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { CartProvider } from "@/context/cart-context";
 import { StoreShell } from "@/components/store-shell";
+import { MotionProvider } from "@/components/motion/motion-provider";
 
 export const metadata: Metadata = {
   title: "OKOUMÉ Store — High-tech au Gabon",
@@ -20,7 +21,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className="h-full antialiased"
       suppressHydrationWarning
     >
-      <body className="min-h-full"><CartProvider><StoreShell>{children}</StoreShell></CartProvider></body>
+      <body className="min-h-full"><MotionProvider><CartProvider><StoreShell>{children}</StoreShell></CartProvider></MotionProvider></body>
     </html>
   );
 }

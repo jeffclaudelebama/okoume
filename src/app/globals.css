@@ -11,3 +11,14 @@ html { background: #ffffff; }
 html.dark { background: #0A0A0A; }
 body { margin: 0; font-family: "Plus Jakarta Sans", Inter, Arial, sans-serif; }
 button, input { font: inherit; }
+
+.okoume-interactive { transition: transform 160ms cubic-bezier(0.22, 1, 0.36, 1), background-color 160ms ease, color 160ms ease; }
+.okoume-interactive:active { transform: scale(0.94); }
+.okoume-nav-item { transition: color 160ms ease, transform 160ms cubic-bezier(0.22, 1, 0.36, 1); }
+.okoume-nav-item:active { transform: translateY(1px); }
+.okoume-skeleton { background: #ececf0; animation: okoume-pulse 1.8s ease-in-out infinite; }
+.dark .okoume-skeleton { background: #202020; }
+@keyframes okoume-pulse { 0%, 100% { opacity: .72; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+}
