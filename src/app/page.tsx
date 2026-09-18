@@ -1,15 +1,13 @@
 import { ProductCard } from "@/components/product-card";
 import { formatFcfa } from "@/lib/format";
 import { STORE_CONFIG } from "@/lib/store-config";
+import { getStorefrontProducts } from "@/lib/storefront-catalog";
 
-const products = [
-  { id: "iphone-16", brand: "Apple", title: "iPhone 16 Pro 256 Go", price: 875000, previousPrice: 925000, stock: 3, imageLabel: "16 PRO" },
-  { id: "buds-3", brand: "Samsung", title: "Galaxy Buds3 Pro", price: 145000, stock: 12, imageLabel: "BUDS" },
-  { id: "tecno-camon", brand: "TECNO", title: "Camon 30 Premier 5G", price: 299000, stock: 5, imageLabel: "CAMON" },
-  { id: "anker-20k", brand: "Anker", title: "Powerbank 20 000 mAh", price: 35000, stock: 18, imageLabel: "20K" },
-];
+export const dynamic = "force-dynamic";
 
-export default function Home() {
+
+export default async function Home() {
+  const products = await getStorefrontProducts();
   return <>
     <section className="rounded-2xl bg-black p-5 text-white dark:bg-white dark:text-black">
       <p className="text-[10px] font-bold uppercase tracking-[0.18em] opacity-65">Ventes Flash</p>
